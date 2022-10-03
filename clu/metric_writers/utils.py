@@ -135,6 +135,7 @@ def create_default_writer(
     if collection is not None:
       logdir /= collection
     writers.append(SummaryWriter(os.fspath(logdir)))
+    writers.append(WandbWriter(os.fspath(logdir)))
   if asynchronous:
     return AsyncMultiWriter(writers)
   return MultiWriter(writers)
