@@ -132,7 +132,7 @@ class DatasetIterator(collections.abc.Iterator):  # pytype: disable=ignored-abst
 class TfDatasetIterator(DatasetIterator):
   """DatasetIterator for wrapping a `tf.data.Dataset`."""
 
-  def __init__(self, dataset, *, checkpoint: bool):
+  def __init__(self, dataset, checkpoint: bool):
     """Wraps `tf.data.Dataset` object into the `DatasetIterator` interface.
 
     Warning: Do not wrap this interator to do asynchronous prefetching if you
